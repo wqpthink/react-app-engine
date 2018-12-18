@@ -51,7 +51,9 @@ const htmls = (p, include = []) => {
     const components_ps = fs.readdirSync(p);
     for(let i = 0; i < components_ps.length; i++){
         const new_htmls = search(p + "\\" + components_ps[i], include);
-        results = JsonUtil.jsonArrayMerge(results, new_htmls);
+        if(new_htmls instanceof Array){
+            results = JsonUtil.jsonArrayMerge(results, new_htmls)
+        }
     }
     return results;
 };

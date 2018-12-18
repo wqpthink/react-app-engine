@@ -40,7 +40,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         // new CleanWebpackPlugin(["dist", "build", "devp"]),
-        ...html_conf(process.cwd() + "\\src\\component", ["index.js"])
+        ...html_conf(process.cwd() + "\\src\\component", ["index.js","style.js"])
     ],
     devtool: 'inline-source-map',
     devServer: {

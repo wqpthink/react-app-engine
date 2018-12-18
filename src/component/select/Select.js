@@ -7,7 +7,7 @@ import {
     SelectDropdown,
     SelectResultCase,
     SelectResultItem
-} from './style/style';
+} from './style';
 
 
 @withSelect

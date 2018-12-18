@@ -49,7 +49,9 @@ const entrys = (p, exclude = []) => {
     const components_ps = fs.readdirSync(p);
     for(let i = 0; i < components_ps.length; i++){
         const new_entry = search(p + "\\" + components_ps[i], exclude);
-        entrys = JsonUtil.jsonObjectMerge(entrys, new_entry);
+        if(new_entry instanceof Object){
+            entrys = JsonUtil.jsonObjectMerge(entrys, new_entry);
+        }
     }
     return entrys;
 };
